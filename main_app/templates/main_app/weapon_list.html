@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+
+{% endblock %} 
+{% block content %}
+
+<section class="page-header">
+  <h1>All Mobile Suit Weapons</h1>
+  
+</section>
+
+<section class="card-container">
+  {% for weapon in weapon_list %}
+    <div class="card" {% if weapon.color %}style="border-color: {{ weapon.color }};"{% endif %}>
+      <div class="card-bg" {% if weapon.color %}style="background-color: {{ weapon.color }};"{% endif %}></div>
+      <a href="{% url 'weapon-detail' weapon.id %}">
+        <div class="card-content">
+          <h2>{{ weapon.name }}</h2>
+          <p>A {% if weapon.color %}{{ weapon.color }}{% else %}weapon{% endif %}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
