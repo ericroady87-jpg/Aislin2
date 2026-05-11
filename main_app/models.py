@@ -3,7 +3,7 @@ from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
 
-MEALS = (
+FuelTypes = (
     ('N', 'Nuclear'),
     ('P', 'Propellant'),
     ('G', 'GN particles'),

@@ -17,16 +17,16 @@
   <header>
     <div class="header-logo-container">
       <a href="/">
-        <img src="{% static 'images/mobile-suit-hanger.svg' %}" alt="The Mobile Suit Hanger Logo" />
+        <img src="{% static 'images/mobile-suit-hanger.png' %}" alt="The Mobile Suit Hanger Logo" />
       </a>
     </div>
     <nav>
       <ul>
         {% if user.is_authenticated %}
-        <li><a href="{% url 'Mobile-Suit-index' %}">All Mobile Suits</a></li>
-        <li><a href="{% url 'Mobile Suit-create' %}">Add a Mobile Suit</a></li>
-        <li><a href="{% url 'Weapon-index' %}">All Weapons</a></li>
-        <li><a href="{% url 'Weapon-create' %}">Add a Weapon</a></li>
+        <li><a href="{% url 'ms-index' %}">All Mobile Suits</a></li>
+        <li><a href="{% url 'ms-create' %}">Add a Mobile Suit</a></li>
+        <li><a href="{% url 'weapon-index' %}">All Weapons</a></li>
+        <li><a href="{% url 'weapon-create' %}">Add a Weapon</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
         <li>
           <form id="logout-form" method="post" action="{% url 'logout' %}">

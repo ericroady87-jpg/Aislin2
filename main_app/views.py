@@ -14,21 +14,19 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 @login_required
-def ms_index(request):
-    return render(request, 'ms/index.html')
 
 def about(request):
     return render(request, 'about.html')
 
 def ms_index(request):
     ms = MobileSuit.objects.filter(user=request.user)
-    return render(request, 'ms/index.html', {'ms': ms})
+    return render(request, 'index.html', {'ms': ms})
 
 def ms_detail(request, ms_id):
     ms = MobileSuit.objects.get(id=ms_id)
     weapons_ms_doesnt_have = Weapons.objects.exclude(id__in = ms.weapons.all().values_list('id'))
     fueling_form = FuelingForm()
-    return render(request, 'ms/detail.html', {'ms': ms, 'fueling_form': fueling_form, 'weapons': weapons_ms_doesnt_have})
+    return render(request, 'detail.html', {'ms': ms, 'fueling_form': fueling_form, 'weapons': weapons_ms_doesnt_have})
 
 class MsCreate(LoginRequiredMixin, CreateView):
     model = MobileSuit
@@ -92,8 +90,6 @@ def signup(request):
             return redirect('ms-index') 
         else:
             error_message = 'Invalid sign up - try again'
-    
-
-    form = UserCreationForm()
+            form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'signup.html', context)
