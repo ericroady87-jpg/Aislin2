@@ -32,7 +32,7 @@ class MobileSuit(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('mobile-suit-detail', kwargs={'pk': self.id})
+        return reverse('ms-detail', kwargs={'ms_id': self.id})
 
 class Fueling(models.Model):
     date = models.DateField("Fueling Date")

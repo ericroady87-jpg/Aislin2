@@ -11,7 +11,7 @@
 </section>
 
 <section class="card-container">
-  {% for weapon in weapon_list %}
+  {% for weapon in weapons_list %}
     <div class="card" {% if weapon.color %}style="border-color: {{ weapon.color }};"{% endif %}>
       <div class="card-bg" {% if weapon.color %}style="background-color: {{ weapon.color }};"{% endif %}></div>
       <a href="{% url 'weapon-detail' weapon.id %}">

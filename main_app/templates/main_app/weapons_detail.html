@@ -8,11 +8,11 @@
 <div class="card">
   <div class="card-bg"></div>
   <div class="card-content">
-    <h2>{{ weapon.name }}</h2>
-    <p>A {{ weapon.color }} weapon</p>
+    <h2>{{ weapons.name }}</h2>
+    <p>A {{ weapons.color }} weapon</p>
   </div>
 </div>
-<a href="{% url 'weapon-update' weapon.id %}" class="btn warn">Edit</a>
-<a href="{% url 'weapon-delete' weapon.id %}" class="btn danger">Delete</a>
+<a href="{% url 'weapon-update' weapons.id %}" class="btn warn">Edit</a>
+<a href="{% url 'weapon-delete' weapons.id %}" class="btn danger">Delete</a>
 
 {% endblock %}
