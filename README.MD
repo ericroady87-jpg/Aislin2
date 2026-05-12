@@ -35,6 +35,10 @@ H. Delete Weapon:
 
     C. Postresql 
 
+    D. HTML
+
+    E. CSS
+
 
 3. Future Endeavors:
 
